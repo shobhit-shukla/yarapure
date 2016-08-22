@@ -1,0 +1,53 @@
+<p id="notice"></p>
+
+<h2>Users</h2>
+
+<% @users.each do |user| %>
+  <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+    <div class="well profile_view">
+      <div class="col-sm-12">
+        <h4 class="brief"><i><%= user.batch_id %></i></h4>
+        <div class="left col-xs-7">
+          <h2><td><%= user.full_name %></td></h2>
+          <p><strong>Shift: </strong> <%= user.shift %></p>
+          <p><strong>Time: </strong> <%= user.preferred_time %></p>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-building"></i> Address: <%= user.full_address %></li>
+            <li><i class="fa fa-phone"></i> Phone #: <%= user.phone %></li>
+          </ul>
+        </div>
+        <div class="right col-xs-5 text-center">
+          <img src="images/user.png" alt="" class="img-circle img-responsive">
+        </div>
+      </div>
+      <div class="col-xs-12 bottom text-center">
+        <div class="col-xs-12 col-sm-6 emphasis">
+          <p class="ratings">
+            <a>4.0</a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star-o"></span></a>
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 emphasis">
+          <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+            </i> <i class="fa fa-comments-o"></i> </button>
+          <button type="button" class="btn btn-primary btn-xs">
+            <i class="fa fa-user"> </i> View Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    
+<% end %>
+
+<br><!-- 
+<td><%#= link_to 'Show', admin_user_path(user) %></td>
+    <td><%#= link_to 'Edit', edit_admin_user_path(user) %></td>
+    <!-- <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> --> 
+<%= link_to 'New User', new_admin_user_path %>
+

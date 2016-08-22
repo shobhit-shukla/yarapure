@@ -12,6 +12,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
 end
+gem 'devise'
+gem 'thin'
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

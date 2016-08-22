@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  address: MyText
+  city: MyString
+  shift: MyString
+  preferred_time: 2016-08-13 00:24:26
+  batch_id: MyString
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  address: MyText
+  city: MyString
+  shift: MyString
+  preferred_time: 2016-08-13 00:24:26
+  batch_id: MyString
