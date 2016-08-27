@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root 'admin/users#index'
+  root 'plainpage#index'
 
   namespace :admin do
     resources :users
