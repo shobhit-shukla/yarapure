@@ -1,49 +1,18 @@
-<%= form_for(@user, url: admin_users_path) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="col-md-8">
+	<%= simple_form_for(@user, url: send("admin_#{controller_name}_path") , html: { class: 'form-horizontal' },wrapper: :horizontal_form) do |f| %>
+	  <%= f.input :first_name %>
+	  <%= f.input :middle_name %>
+	  <%= f.input :last_name %>
+	  <%= f.input :email %>
+	  <%= f.input :password %>
+	  <%= f.input :password_confirmation %>
+	  <%= f.input :plan_id, collection: Plan.all, prompt: 'Choose a plan' %>
+	  <div id="addresses">
+		  <%= f.simple_fields_for :addresses do |address| %>
+		    <%= render 'admin/users/address_fields', f: address %>
+		  <% end %>	
+		</div> 
+	  <%= f.button :submit_cancel, 'Save', cancel: admin_customers_path %>
+	<% end %>
+</div>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :middle_name %><br>
-    <%= f.text_field :middle_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :shift %><br>
-    <%= f.text_field :shift %>
-  </div>
-  <div class="field">
-    <%= f.label :preferred_time %><br>
-    <%= f.time_select :preferred_time %>
-  </div>
-  <div class="field">
-    <%= f.label :batch_id %><br>
-    <%= f.text_field :batch_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

@@ -1,0 +1,13 @@
+<div class="nested_fields">
+	<%= f.input :address1 %>
+	<%= f.input :address2 %>
+	<%= f.association :city, collection: City.all, prompt: "Choose a City" %>
+	<%= f.input :zip_code %>
+	<%= f.input :active, :input_html => { class: 'bootstrap-switch' } %>
+</div>
+
+<script type="text/javascript">
+	$.fn.bootstrapSwitch.defaults.size = 'mini';
+	$(".bootstrap-switch").bootstrapSwitch('state', true, true
+		);
+</script>

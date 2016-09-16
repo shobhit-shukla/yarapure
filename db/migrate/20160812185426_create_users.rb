@@ -4,8 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :middle_name
       t.string :last_name
-      t.text :address
-      t.string :city
+      t.text :address_id
       t.string :shift
       t.time :preferred_time
       t.string :batch_id

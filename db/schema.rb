@@ -11,17 +11,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820184023) do
+ActiveRecord::Schema.define(version: 20160913052555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city_id"
+    t.string   "zip_code"
+    t.boolean  "active"
+    t.string   "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "state_id"
+    t.string   "abbreviation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "keywords"
+    t.boolean  "featured"
+    t.boolean  "active"
+    t.string   "brand_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.string   "country_id"
+    t.string   "abbreviation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.text     "address"
-    t.string   "city"
+    t.text     "address_id"
     t.string   "shift"
     t.time     "preferred_time"
     t.string   "batch_id"
@@ -38,7 +83,10 @@ ActiveRecord::Schema.define(version: 20160820184023) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "type"
-    t.string   "phone"
+    t.string   "primary_phone"
+    t.string   "secondary_phone"
+    t.integer  "plan_id"
+    t.integer  "product_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

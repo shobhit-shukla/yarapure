@@ -3,7 +3,7 @@ development:
   username: webworks
   password: webworks
   encoding: utf8
-  database: sarvjal_development
+  database: yarasol_development
   pool: 5
   host: localhost
 
@@ -12,11 +12,11 @@ test:
   username: webworks
   password: webworks
   encoding: utf8
-  database: sarvjal_test
+  database: yarasol_test
   pool: 5
   host: localhost
 
 production:
   encoding: utf8
-  database: sarvjal_production
+  database: yarasol_production
   pool: 5

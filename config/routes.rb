@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :plans
+  resources :states
+  resources :cities
+  
+  namespace :admin do
+    resources :addresses
+    resources :users
+    resources :dispatchers
+    resources :employees
+    resources :customers
+  end
+ 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
 
   root 'plainpage#index'
-
-  namespace :admin do
-    resources :users
-  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

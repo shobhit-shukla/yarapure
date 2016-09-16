@@ -9,12 +9,15 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'devise'
+gem 'thin'
+gem 'simple_form'
+gem "cocoon"
+gem "bootstrap-switch-rails"
+
 group :development, :test do
   gem 'byebug'
 end
-gem 'devise'
-gem 'thin'
-
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
