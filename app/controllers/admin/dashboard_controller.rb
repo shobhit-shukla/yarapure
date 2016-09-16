@@ -1,1 +1,2 @@
-dashboard_controller.rb
+class Admin::DashboardController < AdminController
+end
