@@ -1,6 +1,5 @@
 class Admin::UsersController < AdminController
 	def create
-		byebug
 		@user = Dispatcher.new(admin_dispatcher_params)
 
     respond_to do |format|

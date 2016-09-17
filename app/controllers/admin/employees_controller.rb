@@ -14,7 +14,8 @@ class Admin::EmployeesController < AdminController
 
   # GET /admin/employees/new
   def new
-    @employee = Employee.new
+    @user = Employee.new
+    @user.addresses.build
   end
 
   # GET /admin/employees/1/edit
@@ -24,15 +25,15 @@ class Admin::EmployeesController < AdminController
   # POST /admin/employees
   # POST /admin/employees.json
   def create
-    @employee = Employee.new(employee_params)
+    @user = Employee.new(employee_params)
 
     respond_to do |format|
-      if @employee.save
-        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
-        format.json { render :show, status: :created, location: @employee }
+      if @user.save
+        format.html { redirect_to admin_employees_path, notice: 'Employee was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
-        format.json { render json: @employee.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +70,6 @@ class Admin::EmployeesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.fetch(:employee, {})
+      params.require(:employee).permit!
     end
 end

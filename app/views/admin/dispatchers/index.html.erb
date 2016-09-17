@@ -1,25 +1,9 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"></p>
 
-<h1>Listing Admin Dispatchers</h1>
+<h1>Dispatchers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h4><%= link_to 'Create New Dispatcher', new_admin_dispatcher_path, class: 'btn btn-success' %></h4>
 
-  <tbody>
-    <% @admin_dispatchers.each do |admin_dispatcher| %>
-      <tr>
-        <td><%= link_to 'Show', admin_dispatcher %></td>
-        <td><%= link_to 'Edit', edit_admin_dispatcher_path(admin_dispatcher) %></td>
-        <td><%= link_to 'Destroy', admin_dispatcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Dispatcher', new_admin_dispatcher_path %>
+<% @dispatchers.each do |user| %>
+  <%= render partial: 'admin/users/list_users', locals: {user: user} %>
+<% end %>

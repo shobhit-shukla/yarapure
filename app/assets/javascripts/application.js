@@ -20,6 +20,9 @@
 //= require flash.js
 //= require cocoon
 //= require bootstrap-switch
+//= require bootstrap-datetimepicker
+//= require users
+
 
 
 

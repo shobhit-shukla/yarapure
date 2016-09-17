@@ -4,7 +4,7 @@ class Admin::DispatchersController < AdminController
   # GET /admin/dispatchers
   # GET /admin/dispatchers.json
   def index
-    @admin_dispatchers = Dispatcher.all
+    @dispatchers = Dispatcher.all
   end
 
   # GET /admin/dispatchers/1
@@ -14,7 +14,8 @@ class Admin::DispatchersController < AdminController
 
   # GET /admin/dispatchers/new
   def new
-    @admin_dispatcher = Dispatcher.new
+    @user = Dispatcher.new
+    @user.addresses.build
   end
 
   # GET /admin/dispatchers/1/edit
@@ -24,15 +25,15 @@ class Admin::DispatchersController < AdminController
   # POST /admin/dispatchers
   # POST /admin/dispatchers.json
   def create
-    @admin_dispatcher = Dispatcher.new(admin_dispatcher_params)
+    @user = Dispatcher.new(admin_dispatcher_params)
 
     respond_to do |format|
-      if @admin_dispatcher.save
-        format.html { redirect_to @admin_dispatcher, notice: 'Dispatcher was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_dispatcher }
+      if @user.save
+        format.html { redirect_to admin_dispatcher_path, notice: 'Dispatcher was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
-        format.json { render json: @admin_dispatcher.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end

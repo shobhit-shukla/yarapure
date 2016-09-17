@@ -1,0 +1,3 @@
+<%= f.input :plan_id, collection: Plan.all, prompt: 'Choose a plan' %>
+<%= f.input :shift, collection: ['Morning', 'Day', 'Evening'], prompt: 'Choose a Shift' %>
+<%= f.input :preferred_time , as: :string, input_html: { class: "timepicker" }%>

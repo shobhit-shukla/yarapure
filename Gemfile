@@ -14,6 +14,7 @@ gem 'thin'
 gem 'simple_form'
 gem "cocoon"
 gem "bootstrap-switch-rails"
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
 
 group :development, :test do
   gem 'byebug'

@@ -1,17 +1,29 @@
 <div class="col-md-8">
 	<%= simple_form_for(@user, url: send("admin_#{controller_name}_path") , html: { class: 'form-horizontal' },wrapper: :horizontal_form) do |f| %>
+
+	  <!-- Personal Info -->
+	  <span class="section">Personal Information</span>
 	  <%= f.input :first_name %>
 	  <%= f.input :middle_name %>
 	  <%= f.input :last_name %>
 	  <%= f.input :email %>
 	  <%= f.input :password %>
 	  <%= f.input :password_confirmation %>
-	  <%= f.input :plan_id, collection: Plan.all, prompt: 'Choose a plan' %>
+	  <%= f.input :primary_phone %>
+	  <%= f.input :secondary_phone %>
+
+	  <!-- Adresss Fields -->
+	  <span class="section">Address</span>
 	  <div id="addresses">
 		  <%= f.simple_fields_for :addresses do |address| %>
 		    <%= render 'admin/users/address_fields', f: address %>
 		  <% end %>	
-		</div> 
+		</div>
+
+		<!-- Plan Fields -->
+		<span class="section">Plan Details</span>
+		<%= render 'admin/users/plan_fields', f: f %>
+
 	  <%= f.button :submit_cancel, 'Save', cancel: admin_customers_path %>
 	<% end %>
 </div>
