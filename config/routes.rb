@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  resources :products
-  resources :plans
-  resources :states
-  resources :cities
   
   namespace :admin do
+    root to: "dashboard#index", as: :admin
     resources :addresses
     resources :users
     resources :dispatchers
     resources :employees
     resources :customers
     resources :dashboard
+  end
+
+  scope '/admin' do
+    resources :products
+    resources :plans
+    resources :states
+    resources :cities
   end
  
   devise_for :users, controllers: {

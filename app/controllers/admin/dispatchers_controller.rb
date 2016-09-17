@@ -29,7 +29,7 @@ class Admin::DispatchersController < AdminController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_dispatcher_path, notice: 'Dispatcher was successfully created.' }
+        format.html { redirect_to admin_dispatchers_path, notice: 'Dispatcher was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
