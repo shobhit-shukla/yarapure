@@ -1,9 +1,11 @@
 <p id="notice"></p>
 
-<h1>Customers</h1>
+<h2 class="x_title">Customers</h2>
 
-<h4><%= link_to 'Create New Customer', new_admin_customer_path, class: 'btn btn-success' %></h4>
+<div class="x_content">
+	<%= link_to 'Create Customer', new_admin_customer_path, class: 'btn btn-success' %><br/>
 
-<% @customers.each do |user| %>
-  <%= render partial: 'admin/users/list_users', locals: {user: user} %>
-<% end %>
+	<% @customers.each do |user| %>
+	  <%= render partial: 'admin/users/list_users', locals: {user: user} %>
+	<% end %>
+</div>

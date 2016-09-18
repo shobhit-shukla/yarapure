@@ -1,4 +1,4 @@
-class PlansController < ApplicationController
+class PlansController < AdminController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
   # GET /plans

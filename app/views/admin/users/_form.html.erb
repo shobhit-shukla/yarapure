@@ -1,5 +1,5 @@
 <div class="col-md-8">
-	<%= simple_form_for(@user, url: send("admin_#{controller_name}_path") , html: { class: 'form-horizontal' },wrapper: :horizontal_form) do |f| %>
+	<%= simple_form_for(@user, url: send("admin_#{controller_name}_path") , html: { class: 'form-horizontal' }) do |f| %>
 
 	  <!-- Personal Info -->
 	  <span class="section">Personal Information</span>

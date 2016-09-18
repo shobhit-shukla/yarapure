@@ -1,29 +1,8 @@
-<%= form_for(@state) do |f| %>
-  <% if @state.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@state.errors.count, "error") %> prohibited this state from being saved:</h2>
-
-      <ul>
-      <% @state.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="col-md-6">
+  <%= simple_form_for(@state, html: { class: 'form-horizontal' }) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :country_id %>
+    <%= f.input :abbreviation %>
+    <%= f.button :submit_cancel, 'Save', cancel: states_path %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :country_id %><br>
-    <%= f.text_field :country_id %>
-  </div>
-  <div class="field">
-    <%= f.label :abbreviation %><br>
-    <%= f.text_field :abbreviation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

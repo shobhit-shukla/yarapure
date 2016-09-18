@@ -1,4 +1,4 @@
-class StatesController < ApplicationController
+class StatesController < AdminController
   before_action :set_state, only: [:show, :edit, :update, :destroy]
 
   # GET /states

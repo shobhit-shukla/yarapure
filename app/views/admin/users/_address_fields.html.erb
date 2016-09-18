@@ -3,5 +3,5 @@
 	<%= f.input :address2 %>
 	<%= f.association :city, collection: City.all, prompt: "Choose a City" %>
 	<%= f.input :zip_code %>
-	<%= f.input :active, :input_html => { class: 'bootstrap-switch' } %>
+	<%#= f.input :active, :input_html => { class: 'bootstrap-switch' } %>
 </div>

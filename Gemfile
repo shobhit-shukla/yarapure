@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'thin'
 gem 'simple_form'
+gem 'country_select'
 gem "cocoon"
 gem "bootstrap-switch-rails"
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
