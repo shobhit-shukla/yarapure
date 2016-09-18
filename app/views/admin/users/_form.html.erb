@@ -7,10 +7,10 @@
 	  <%= f.input :middle_name %>
 	  <%= f.input :last_name %>
 	  <%= f.input :email %>
-	  <%= f.input :password %>
-	  <%= f.input :password_confirmation %>
-	  <%= f.input :primary_phone %>
-	  <%= f.input :secondary_phone %>
+	  <%= f.input :password, placeholder: 'Minimum six characters.' %>
+	  <%= f.input :password_confirmation, placeholder: 'Minimum six characters.' %>
+	  <%= f.input :phone, label: 'Phone Number' %>
+	  <%= f.input :secondary_phone, label: 'Alternate Number' %>
 
 	  <!-- Adresss Fields -->
 	  <span class="section">Address</span>
@@ -20,10 +20,12 @@
 		  <% end %>	
 		</div>
 
-		<!-- Plan Fields -->
-		<span class="section">Plan Details</span>
-		<%= render 'admin/users/plan_fields', f: f %>
-
+		<% if @user.customer? %>
+			<!-- Plan Fields -->
+			<span class="section">Plan Details</span>
+			<%= render 'admin/users/plan_fields', f: f %>
+		<% end %>	
+			
 	  <%= f.button :submit_cancel, 'Save', cancel: admin_customers_path %>
 	<% end %>
 </div>

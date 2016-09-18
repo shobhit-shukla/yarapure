@@ -3,8 +3,8 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :keywords %>
-    <%= f.input :featured %>
-    <%= f.input :active %>
+    <%= f.input :featured, :input_html => { class: 'bootstrap-switch' }  %>
+    <%= f.input :active, :input_html => { class: 'bootstrap-switch' }  %>
     <%= f.input :brand_id %>
     <%= f.button :submit_cancel, 'Save', cancel: products_path %>
   <% end %>

@@ -1,29 +1,8 @@
-<%= form_for(@plan) do |f| %>
-  <% if @plan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
-
-      <ul>
-      <% @plan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="col-md-6">  
+  <%= simple_form_for(@plan, html: { class: 'form-horizontal' }) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :start_date, as: :string, input_html: { class: "datetimepicker" } %>
+    <%= f.input :end_date, as: :string, input_html: { class: "datetimepicker" } %>
+    <%= f.button :submit_cancel, 'Save', cancel: plans_path %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.datetime_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.datetime_select :end_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

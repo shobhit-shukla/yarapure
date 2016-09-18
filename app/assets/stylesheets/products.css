@@ -1,0 +1,13 @@
+.form-group.boolean{
+	margin-left: 52px; 
+}
+
+.bootstrap-switch{
+	float: right;
+}
+
+.radio label, .checkbox label{
+	width: 35%;
+	font-weight: 600;
+	text-align: right;
+}

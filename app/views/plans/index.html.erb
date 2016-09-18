@@ -18,8 +18,8 @@
       <% @plans.each do |plan| %>
         <tr>
           <td><%= plan.name %></td>
-          <td><%= plan.start_date %></td>
-          <td><%= plan.end_date %></td>
+          <td><%= plan.start_date.try(:strftime, "%B %d, %Y") %></td>
+          <td><%= plan.end_date.try(:strftime, "%B %d, %Y") %></td>
           <td><%= link_to 'Show', plan, class: 'btn btn-primary btn-sm' %></td>
           <td><%= link_to 'Edit', edit_plan_path(plan), class: 'btn btn-info btn-sm' %></td>
           <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
