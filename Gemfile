@@ -16,6 +16,7 @@ gem 'country_select'
 gem "cocoon"
 gem "bootstrap-switch-rails"
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
