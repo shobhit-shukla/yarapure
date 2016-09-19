@@ -20,6 +20,7 @@ gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
+  gem 'annotate'
 end
 
 group :development do

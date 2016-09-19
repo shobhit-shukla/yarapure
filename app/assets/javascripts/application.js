@@ -15,6 +15,9 @@
 //= require js/moment/moment.min.js
 //= require js/datepicker/daterangepicker.js
 //= require js/chartjs/chart.min.js
+//= require js/sparkline/jquery.sparkline.min.js
+//= require js/moris/morris.min.js
+//= require js/moris/raphael-min.js
 //= require js/pace/pace.min.js
 //= require  js/nprogress.js
 //= require flash.js
@@ -22,6 +25,7 @@
 //= require bootstrap-switch
 //= require bootstrap-datetimepicker
 //= require users
+//= require dashboard
 
 
 
