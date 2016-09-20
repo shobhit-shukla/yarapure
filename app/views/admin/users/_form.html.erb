@@ -11,6 +11,9 @@
 	  <%= f.input :password_confirmation, placeholder: 'Minimum six characters.' %>
 	  <%= f.input :phone, label: 'Phone Number' %>
 	  <%= f.input :secondary_phone, label: 'Alternate Number' %>
+	  <%= image_tag(@user.avatar_url) if @user.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
 
 	  <!-- Adresss Fields -->
 	  <span class="section">Address</span>

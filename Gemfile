@@ -17,6 +17,8 @@ gem "cocoon"
 gem "bootstrap-switch-rails"
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
 gem 'rails_12factor'
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug'

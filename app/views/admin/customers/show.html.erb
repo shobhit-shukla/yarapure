@@ -45,7 +45,7 @@
             <div class="profile_img">
               <div id="crop-avatar">
                 <!-- Current avatar -->
-                <img class="img-responsive avatar-view" src="/images/user.png" alt="Avatar" title="Change the avatar">
+                <%= image_tag(@user.avatar_url, class: "img-responsive avatar-view", alt: "Avatar", title: "Change the avatar") if @user.avatar? %>                 
               </div>
             </div>
             <h3><%= @user.full_name.capitalize %></h3>
@@ -54,14 +54,9 @@
               <li><i class="fa fa-map-marker user-profile-icon"></i> <%= @user.addresses.first.city.name %>, <%= @user.addresses.first.city.state.name %>, India
               </li>
 
-              <li>
+              <!-- <li>
                 <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
-              </li>
-
-              <li class="m-top-xs">
-                <i class="fa fa-external-link user-profile-icon"></i>
-                <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
-              </li>
+              </li> -->
             </ul>
 
             <%= link_to edit_admin_customer_path(@user), class: "btn btn-success" do %>
