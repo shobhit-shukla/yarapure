@@ -27,6 +27,7 @@
 #  plan_id                :integer
 #  product_id             :integer
 #  phone                  :string
+#  avatar                 :string
 #
 
 class Dispatcher < User

@@ -5,7 +5,7 @@
     <%= f.input :keywords %>
     <%= f.input :featured, :input_html => { class: 'bootstrap-switch' }  %>
     <%= f.input :active, :input_html => { class: 'bootstrap-switch' }  %>
-    <%= f.input :brand_id %>
+    <%= f.input :brand_id, collection: Brand.all, prompt: 'Select a Brand' %>
     <%= f.button :submit_cancel, 'Save', cancel: products_path %>
   <% end %>
 </div>

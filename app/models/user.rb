@@ -27,6 +27,7 @@
 #  plan_id                :integer
 #  product_id             :integer
 #  phone                  :string
+#  avatar                 :string
 #
 
 class User < ActiveRecord::Base
@@ -52,6 +53,10 @@ class User < ActiveRecord::Base
 
   def dispatcher?
   	type == 'Dispatcher'
+  end
+
+  def employee?
+    type == 'Employee'
   end
  
 end

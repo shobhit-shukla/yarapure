@@ -27,7 +27,11 @@
 #  plan_id                :integer
 #  product_id             :integer
 #  phone                  :string
+#  avatar                 :string
 #
 
 class Employee < User
+	has_one :employee_detail
+
+	accepts_nested_attributes_for :employee_detail
 end

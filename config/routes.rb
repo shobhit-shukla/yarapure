@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   scope '/admin' do
     resources :products
+    resources :brands
     resources :plans
     resources :states
     resources :cities

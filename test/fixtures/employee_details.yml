@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_id: 1
+  department: MyString
+  designation: MyString
+  grade: MyString
+  reporting_user_id: 1
+  salary: 1.5
+  previous_company: MyString
+  previous_salary: 1.5
+  previous_designation: MyString
+
+two:
+  employee_id: 1
+  department: MyString
+  designation: MyString
+  grade: MyString
+  reporting_user_id: 1
+  salary: 1.5
+  previous_company: MyString
+  previous_salary: 1.5
+  previous_designation: MyString

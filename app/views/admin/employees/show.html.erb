@@ -1,4 +1,2 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_admin_employee_path(@admin_employee) %> |
-<%= link_to 'Back', admin_employees_path %>
+<%= render partial: 'admin/users/user_details', locals: {user: @employee}%>

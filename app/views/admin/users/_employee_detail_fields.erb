@@ -1,0 +1,12 @@
+<div class="nested_fields">
+	<%= f.input :department %>
+	<%= f.input :designation %>
+	<%= f.input :grade %>
+	<%= f.input :salary %>
+	<%= f.input :reporting_user_id, label: 'Report to', collection: Employee.all.pluck(:first_name, :last_name).map { |names| names.join(" ") }, prompt: 'Select Reporting User' %>
+	<%= f.input :previous_company %>
+	<%= f.input :previous_salary%>
+	<%= f.input :previous_designation %>
+	<%= f.input :joining_date, as: :string, input_html: { class: "datetimepicker" }%>
+	<%#= f.input :active, :input_html => { class: 'bootstrap-switch' } %>
+</div>

@@ -27,8 +27,16 @@
 			<!-- Plan Fields -->
 			<span class="section">Plan Details</span>
 			<%= render 'admin/users/plan_fields', f: f %>
-		<% end %>	
-			
+		<% end %>
+
+		<% if @user.employee? %>
+			<!-- Employee Detail Fields -->
+			<div id="employee_detail">
+		  	<%= f.simple_fields_for :employee_detail do |detail| %>
+					<span class="section">Employee Detail Details</span>
+					<%= render 'admin/users/employee_detail_fields', f: detail %>
+				<% end %>	
+		<% end    	%>	
 	  <%= f.button :submit_cancel, 'Save', cancel: admin_customers_path %>
 	<% end %>
 </div>

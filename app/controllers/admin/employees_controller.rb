@@ -16,6 +16,7 @@ class Admin::EmployeesController < AdminController
   def new
     @user = Employee.new
     @user.addresses.build
+    @user.build_employee_detail
   end
 
   # GET /admin/employees/1/edit

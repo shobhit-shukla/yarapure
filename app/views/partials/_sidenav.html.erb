@@ -32,14 +32,13 @@
             <li><a><i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu" style="display: none">
                 <li><%= link_to 'Dashboard', admin_path %>
-                </li>                
+                </li>
               </ul>
             </li>
             <li><a><i class="fa fa-user"></i> Users <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu" style="display: none">
                 <li><%= link_to 'Customers', admin_customers_path %></li>
                 <li><%= link_to 'Employees', admin_employees_path %></li>
-                <li><%= link_to 'Dispatchers', admin_dispatchers_path %></li>
                 <!-- <li><%#= link_to 'Admins', admin_customers_path %></li> -->
               </ul>
             </li>
@@ -53,6 +52,7 @@
             <li><a><i class="fa fa-shopping-cart"></i> Products & Services <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu" style="display: none">
                 <li><%= link_to 'Products', products_path %></li>
+                <li><%= link_to 'Brands', brands_path %></li>
               </ul>
             </li>
           </ul>
