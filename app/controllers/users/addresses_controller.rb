@@ -62,13 +62,14 @@ class User::AddressesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_address
-      @admin_address = Admin::Address.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_address_params
-      params.require(:admin_address).permit(:address1, :address2, :city_id, :zip_code, :active, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_address
+    @admin_address = Admin::Address.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_address_params
+    params.require(:admin_address).permit(:address1, :address2, :city_id, :zip_code, :active, :user_id)
+  end
 end

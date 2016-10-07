@@ -1,6 +1,6 @@
 class Admin::UsersController < AdminController
-	def create
-		@user = Dispatcher.new(admin_dispatcher_params)
+  def create
+    @user = Dispatcher.new(admin_dispatcher_params)
 
     respond_to do |format|
       if @admin_dispatcher.save
@@ -11,5 +11,5 @@ class Admin::UsersController < AdminController
         format.json { render json: @admin_dispatcher.errors, status: :unprocessable_entity }
       end
     end
-	end
+  end
 end

@@ -1,5 +1,10 @@
 <div class="nested_fields">
-	<%= f.input :department %>
+  <div id="department">
+    <div id="department_from_list">
+      <%= f.association :department, :collection => Department.order(:name), :prompt => 'Choose an existing department' %>
+    </div>
+    <%= link_to_add_association 'add a new department', f, :department %>
+  </div>
 	<%= f.input :designation %>
 	<%= f.input :grade %>
 	<%= f.input :salary %>

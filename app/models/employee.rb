@@ -31,7 +31,6 @@
 #
 
 class Employee < User
-	has_one :employee_detail
-
-	accepts_nested_attributes_for :employee_detail
+  has_one :employee_detail
+  accepts_nested_attributes_for :employee_detail
 end

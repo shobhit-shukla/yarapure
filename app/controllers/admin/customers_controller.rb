@@ -63,13 +63,14 @@ class Admin::CustomersController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = Customer.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:customer).permit!#(:first_name, :middle_name, :last_name, :address_id, :shift, :preferred_time, :batch_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = Customer.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:customer).permit! # (:first_name, :middle_name, :last_name, :address_id, :shift, :preferred_time, :batch_id)
+  end
 end

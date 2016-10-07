@@ -4,7 +4,7 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
@@ -13,8 +13,8 @@ gem 'devise'
 gem 'thin'
 gem 'simple_form'
 gem 'country_select'
-gem "cocoon"
-gem "bootstrap-switch-rails"
+gem 'cocoon'
+gem 'bootstrap-switch-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
 gem 'rails_12factor'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
@@ -31,7 +31,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem "better_errors"
-  gem "letter_opener"
+  gem 'better_errors'
+  gem 'letter_opener'
 end
-

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  match :admin, :to => 'admin/dashboard#index', via: [:get]
+  match :admin, to: 'admin/dashboard#index', via: [:get]
 
   namespace :admin do
     resources :addresses
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :states
     resources :cities
   end
- 
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }

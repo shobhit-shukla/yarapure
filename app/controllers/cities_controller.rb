@@ -62,13 +62,14 @@ class CitiesController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_city
-      @city = City.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def city_params
-      params.require(:city).permit(:name, :state_id, :abbreviation)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_city
+    @city = City.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def city_params
+    params.require(:city).permit(:name, :state_id, :abbreviation)
+  end
 end

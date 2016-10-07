@@ -39,24 +39,23 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :addresses
-  validates :email, presence: :true, if: Proc.new { |a| a.dispatcher? }
+  validates :email, presence: :true, if: proc { |a| a.dispatcher? }
 
   accepts_nested_attributes_for :addresses
 
   def full_name
-  	first_name.to_s + ' ' + last_name.to_s
+    first_name.to_s + ' ' + last_name.to_s
   end
 
   def customer?
-  	type == 'Customer'
+    type == 'Customer'
   end
 
   def dispatcher?
-  	type == 'Dispatcher'
+    type == 'Dispatcher'
   end
 
   def employee?
     type == 'Employee'
   end
- 
 end

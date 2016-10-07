@@ -18,5 +18,8 @@
 #
 
 class EmployeeDetail < ActiveRecord::Base
-	belongs_to :employee
+  belongs_to :employee
+  belongs_to :department
+
+  accepts_nested_attributes_for :department, :reject_if => :all_blank
 end

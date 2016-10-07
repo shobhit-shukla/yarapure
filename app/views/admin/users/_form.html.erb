@@ -15,7 +15,7 @@
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
 
-	  <!-- Adresss Fields -->
+	  <!-- Address Fields -->
 	  <span class="section">Address</span>
 	  <div id="addresses">
 		  <%= f.simple_fields_for :addresses do |address| %>
@@ -35,9 +35,9 @@
 		  	<%= f.simple_fields_for :employee_detail do |detail| %>
 					<span class="section">Employee Detail Details</span>
 					<%= render 'admin/users/employee_detail_fields', f: detail %>
-				<% end %>	
-		<% end    	%>	
+				<% end %>
+      </div>
+    <% end %>
 	  <%= f.button :submit_cancel, 'Save', cancel: admin_customers_path %>
 	<% end %>
 </div>
-

@@ -22,20 +22,19 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  #config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   # change this to true to load images from the public folder in production for non-NGNIX setup, like PUMA
   config.serve_static_files = true
 
-      # Compress JavaScripts and CSS.
+  # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  #config.assets.compile = false
+  # config.assets.compile = false
   # feel free to change it back to false, but it had to be true to make glyphs work in my case.
   # I am not really sure why that is at the moment
   config.assets.compile = true
-
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -82,15 +81,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => "www.yarasol.com" }
+  config.action_mailer.default_url_options = { host: 'www.yarasol.com' }
 
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.sendgrid.net",
-    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => ENV["SENDGRID_USERNAME"],
-    :password  => ENV["SENDGRID_PASSWORD"],
-    :authentication => 'login',
-    :domain => 'yarasol.herokuapp.com'
+    address: 'smtp.sendgrid.net',
+    port: 587, # ports 587 and 2525 are also supported with STARTTLS
+    enable_starttls_auto: true, # detects and uses STARTTLS
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    authentication: 'login',
+    domain: 'yarasol.herokuapp.com'
   }
 end

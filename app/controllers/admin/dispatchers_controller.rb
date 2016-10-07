@@ -63,13 +63,14 @@ class Admin::DispatchersController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_dispatcher
-      @admin_dispatcher = Admin::Dispatcher.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_dispatcher_params
-      params.fetch(:admin_dispatcher, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_dispatcher
+    @admin_dispatcher = Admin::Dispatcher.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_dispatcher_params
+    params.fetch(:admin_dispatcher, {})
+  end
 end
