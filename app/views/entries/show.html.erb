@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entry.user_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @entry.product_id %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @entry.rate %>
+</p>
+
+<p>
+  <strong>No of jars:</strong>
+  <%= @entry.no_of_jars %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @entry.amount %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

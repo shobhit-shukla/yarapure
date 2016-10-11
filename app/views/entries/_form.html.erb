@@ -1,0 +1,12 @@
+<div class="col-md-6">
+  <%= simple_form_for(@entry, html: { class: 'form-horizontal' }) do |f| %>
+    <%= f.error_notification %>
+
+      <%= f.association :user, label_method: :full_name, collection: Customer.all, prompt: 'Choose a Customer' %>
+      <%= f.association :product, prompt: 'Choose a product' %>
+      <%= f.input :rate %>
+      <%= f.input :no_of_jars %>
+      <%= f.input :amount %>
+      <%= f.button :submit_cancel, 'Save', cancel: entries_path %>
+  <% end %>
+</div>

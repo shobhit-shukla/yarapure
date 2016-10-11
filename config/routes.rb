@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :plans
     resources :states
     resources :cities
+    resources :entries
   end
 
   devise_for :users, controllers: {

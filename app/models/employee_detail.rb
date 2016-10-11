@@ -11,7 +11,7 @@
 #  salary               :float
 #  previous_company     :string
 #  previous_salary      :float
-#  previous_designation :string
+#  previous_designation :stringmk
 #  joining_date         :date
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
