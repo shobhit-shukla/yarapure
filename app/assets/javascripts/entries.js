@@ -1,4 +1,4 @@
-$(function(){
+$( document ).ready(function(){
 	console.log('ready')
 	$("#entry_rate, #entry_no_of_jars").on('change paste keyup input', function(){
 		var rate = parseInt($('#entry_rate').val());
