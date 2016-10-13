@@ -31,4 +31,6 @@
 #
 
 class Customer < User
+	validates :plan_id, :shift, :deposit, :start_date, :days_type, presence: true
+	enum days_type: ['MWF', 'TTS', 'Daily', 'On call']
 end

@@ -1,3 +1,6 @@
 <%= f.input :plan_id, collection: Plan.all, prompt: 'Choose a plan' %>
 <%= f.input :shift, collection: ['Morning', 'Day', 'Evening'], prompt: 'Choose a Shift' %>
+<%= f.input :days_type, label: 'Days', collection: Customer.days_types.keys, prompt: 'Choose Days'  %>
 <%= f.input :preferred_time, as: :string, input_html: { class: "timepicker" }%>
+<%= f.input :start_date, as: :string, input_html: { class: "datetimepicker" }%>
+<%= f.input :deposit %>

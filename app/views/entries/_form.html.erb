@@ -6,16 +6,7 @@
       <%= f.association :product, prompt: 'Choose a product' %>
       <%= f.input :rate %>
       <%= f.input :no_of_jars %>
-      <%= f.input :amount, disabled: true %>
+      <%= f.input :amount %>
       <%= f.button :submit_cancel, 'Save', cancel: entries_path %>
   <% end %>
 </div>
-<script type="text/javascript">
-	$("#entry_rate, #entry_no_of_jars").on('change paste keyup input', function(){
-		var rate = parseInt($('#entry_rate').val());
-		var jars = parseInt($('#entry_no_of_jars').val());
-		console.log($('#entry_rate').val())
-		console.log(rate)
-		$('#entry_amount').val(rate*jars);
-	});	
-</script>

@@ -39,7 +39,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :addresses
-  validates :email, presence: :true, if: proc { |a| a.dispatcher? }
+  validates :email, :first_name, :last_name, :password, :password_confirmation, :phone, presence: :true
+  validates :phone, uniqueness: true
 
   accepts_nested_attributes_for :addresses
 

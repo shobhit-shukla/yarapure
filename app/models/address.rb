@@ -16,4 +16,6 @@
 class Address < ActiveRecord::Base
   belongs_to :user
   belongs_to :city
+
+  validates :address1, :city_id, :user_id, presence: true
 end

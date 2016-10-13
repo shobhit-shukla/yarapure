@@ -25,6 +25,7 @@
 //= require bootstrap-switch
 //= require bootstrap-datetimepicker
 //= require users
+//= require entries
 
 
 
