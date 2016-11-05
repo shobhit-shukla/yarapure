@@ -1,5 +1,5 @@
 <div class="col-md-8">
-	<%= simple_form_for(@user, url: send("admin_#{controller_name}_path") , html: { class: 'form-horizontal' }) do |f| %>
+	<%= simple_form_for(@user, url: user_form_url(@user) , html: { class: 'form-horizontal' }) do |f| %>
 
 	  <!-- Personal Info -->
 	  <span class="section">Personal Information</span>
@@ -9,7 +9,7 @@
 	  <%= f.input :email %>
 	  <%= f.input :password, placeholder: 'Minimum six characters.' %>
 	  <%= f.input :password_confirmation, placeholder: 'Minimum six characters.' %>
-	  <%= f.input :phone, label: 'Phone Number' %>
+	  <%= f.input :phone, label: 'Mobile Number' %>
 	  <%= f.input :secondary_phone, label: 'Alternate Number' %>
 	  <%= image_tag(@user.avatar_url) if @user.avatar? %>
     <%= f.file_field :avatar %>
@@ -24,16 +24,20 @@
 		</div>
 
 		<% if @user.customer? %>
-			<!-- Plan Fields -->
-			<span class="section">Plan Details</span>
-			<%= render 'admin/users/plan_fields', f: f %>
+			<!-- Customer Detail Fields -->
+			<div id="customer_details">
+		  	<%= f.simple_fields_for :customer_detail do |detail| %>
+					<span class="section">Customer Details</span>
+					<%= render 'admin/users/customer_detail_fields', f: detail %>
+				<% end %>
+      </div>
 		<% end %>
 
 		<% if @user.employee? %>
 			<!-- Employee Detail Fields -->
-			<div id="employee_detail">
+			<div id="employee_details">
 		  	<%= f.simple_fields_for :employee_detail do |detail| %>
-					<span class="section">Employee Detail Details</span>
+					<span class="section">Employee Details</span>
 					<%= render 'admin/users/employee_detail_fields', f: detail %>
 				<% end %>
       </div>

@@ -1,0 +1,25 @@
+<div class="nested_fields">
+	<%= f.input :customer_type_id, collection: CustomerType.all, prompt: 'Customer Type' %>
+	<%= f.input :plan_id, collection: Plan.all, prompt: 'Choose a plan' %>
+	<%= f.input :shift, collection: ['Morning', 'Day', 'Evening'], prompt: 'Choose a Shift' %>
+	<%= f.input :days_type, label: 'Days', collection: CustomerDetail.days_types.keys, prompt: 'Choose Days'  %>
+	<%= f.input :preferred_time, as: :string, input_html: { class: "timepicker" }%>
+	<%= f.input :start_date, as: :string, input_html: { class: "datetimepicker" }%>
+	<%= f.input :registration_amount %>
+	<%= f.input :deposit_amount %>
+	<%= f.input :rate %>
+	<%= f.input :quantity %>
+	<%= f.input :prepaid_amount %>
+</div>
+
+<script type="text/javascript">
+	$('#customer_customer_detail_attributes_plan_id').change(function(){
+		if($(this).val() == 2){
+			$('.customer_customer_detail_prepaid_amount').show();
+			$('.customer_customer_detail_quantity').show();
+		}else{
+			$('.customer_customer_detail_prepaid_amount').hide();
+			$('.customer_customer_detail_quantity').hide();
+		}
+	})
+</script>

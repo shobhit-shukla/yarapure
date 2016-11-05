@@ -7,9 +7,6 @@
 #  middle_name            :string
 #  last_name              :string
 #  address_id             :text
-#  shift                  :string
-#  preferred_time         :time
-#  batch_id               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string           default(""), not null
@@ -24,13 +21,13 @@
 #  last_sign_in_ip        :inet
 #  type                   :string
 #  secondary_phone        :string
-#  plan_id                :integer
-#  product_id             :integer
 #  phone                  :string
 #  avatar                 :string
+#  parent_id              :integer
 #
 
 class Customer < User
-	validates :plan_id, :shift, :deposit, :start_date, :days_type, presence: true
-	enum days_type: ['MWF', 'TTS', 'Daily', 'On call']
+	has_one :customer_detail
+
+	accepts_nested_attributes_for :customer_detail
 end

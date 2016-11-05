@@ -1,0 +1,9 @@
+<div class="nested_fields">
+	<%= f.input :start_date, as: :string, label: 'Date', input_html: { class: "datetimepicker" }%>
+	<%= f.input :preferred_time, as: :string, label: 'Time', input_html: { class: "timepicker" }%>
+	<%= f.input :shift, collection: ['Morning', 'Day', 'Evening'], prompt: 'Choose a Shift' %>
+	<%= f.input :deposit_amount %>
+	<%= f.input :rate %>
+	<%= f.input :quantity %>
+</div>
+<hr />

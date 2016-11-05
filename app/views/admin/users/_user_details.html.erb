@@ -59,7 +59,7 @@
               </li> -->
             </ul>
 
-            <%= link_to edit_admin_customer_path(user), class: "btn btn-success" do %>
+            <%= link_to send("edit_admin_#{controller_name.singularize}_path", user), class: "btn btn-success" do %>
               <i class="fa fa-edit m-right-xs"></i>Edit Profile
             <% end %>
             <br />

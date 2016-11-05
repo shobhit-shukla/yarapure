@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: yarasol
-  api_key: '689642437299612'
-  api_secret: nHQezDlozuxcFkYO3110qjpPhfc
+  cloud_name: hthamovrr
+  api_key: '739958196977861'
+  api_secret: -buiDneBOqUP8SXZpYfTfQI-byg
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: yarasol
-  api_key: '689642437299612'
-  api_secret: nHQezDlozuxcFkYO3110qjpPhfc
+  cloud_name: hthamovrr
+  api_key: '739958196977861'
+  api_secret: -buiDneBOqUP8SXZpYfTfQI-byg
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: yarasol
-  api_key: '689642437299612'
-  api_secret: nHQezDlozuxcFkYO3110qjpPhfc
+  cloud_name: hthamovrr
+  api_key: '739958196977861'
+  api_secret: -buiDneBOqUP8SXZpYfTfQI-byg
   enhance_image_tag: true
   static_image_support: false

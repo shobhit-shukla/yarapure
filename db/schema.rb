@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013201847) do
+ActiveRecord::Schema.define(version: 20161105121645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,13 @@ ActiveRecord::Schema.define(version: 20161013201847) do
     t.string   "zip_code"
     t.boolean  "active"
     t.string   "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
   end
+
+  add_index "addresses", ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id", using: :btree
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +45,41 @@ ActiveRecord::Schema.define(version: 20161013201847) do
     t.string   "abbreviation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "custom_auto_increments", force: :cascade do |t|
+    t.string   "counter_model_name"
+    t.integer  "counter",            default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "custom_auto_increments", ["counter_model_name"], name: "index_custom_auto_increments_on_counter_model_name", using: :btree
+
+  create_table "customer_details", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "customer_type_id"
+    t.integer  "plan_id"
+    t.string   "shift"
+    t.integer  "days_type"
+    t.time     "preferred_time"
+    t.date     "start_date"
+    t.float    "deposit_amount"
+    t.integer  "rate"
+    t.integer  "quantity"
+    t.integer  "product_id"
+    t.boolean  "is_order",            default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "order_id"
+    t.float    "prepaid_amount"
+    t.float    "registration_amount"
+  end
+
+  create_table "customer_types", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -109,9 +148,6 @@ ActiveRecord::Schema.define(version: 20161013201847) do
     t.string   "middle_name"
     t.string   "last_name"
     t.text     "address_id"
-    t.string   "shift"
-    t.time     "preferred_time"
-    t.string   "batch_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -126,13 +162,10 @@ ActiveRecord::Schema.define(version: 20161013201847) do
     t.inet     "last_sign_in_ip"
     t.string   "type"
     t.string   "secondary_phone"
-    t.integer  "plan_id"
-    t.integer  "product_id"
     t.string   "phone"
     t.string   "avatar"
-    t.float    "deposit"
-    t.datetime "start_date"
-    t.integer  "days_type"
+    t.integer  "parent_id"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

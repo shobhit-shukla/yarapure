@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :states
     resources :cities
     resources :entries
+    resources :customer_types
+    resources :orders
   end
 
   devise_for :users, controllers: {

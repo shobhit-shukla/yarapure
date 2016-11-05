@@ -16,6 +16,7 @@ class Admin::CustomersController < AdminController
   def new
     @user = Customer.new
     @user.addresses.build
+    @user.build_customer_detail
   end
 
   # GET /users/1/edit
@@ -26,7 +27,6 @@ class Admin::CustomersController < AdminController
   # POST /users.json
   def create
     @user = Customer.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to admin_customers_path, notice: 'User was successfully created.' }
@@ -42,8 +42,12 @@ class Admin::CustomersController < AdminController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
+      if user_params[:password].blank? && user_params[:password_confirmation].blank?
+          user_params.delete(:password)
+          user_params.delete(:password_confirmation)
+      end
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_customers_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

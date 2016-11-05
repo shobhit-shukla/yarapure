@@ -7,9 +7,6 @@
 #  middle_name            :string
 #  last_name              :string
 #  address_id             :text
-#  shift                  :string
-#  preferred_time         :time
-#  batch_id               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string           default(""), not null
@@ -24,25 +21,27 @@
 #  last_sign_in_ip        :inet
 #  type                   :string
 #  secondary_phone        :string
-#  plan_id                :integer
-#  product_id             :integer
 #  phone                  :string
 #  avatar                 :string
+#  parent_id              :integer
 #
 
 class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
+  protokoll :uid, :pattern => "%Y%m%d#####"
+
+
+  has_many :addresses, :as => :addressable
+
+  accepts_nested_attributes_for :addresses
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :addresses
-  validates :email, :first_name, :last_name, :password, :password_confirmation, :phone, presence: :true
+  validates :first_name, :last_name, :phone, presence: :true
   validates :phone, uniqueness: true
-
-  accepts_nested_attributes_for :addresses
 
   def full_name
     first_name.to_s + ' ' + last_name.to_s
