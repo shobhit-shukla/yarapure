@@ -2,11 +2,18 @@
   <%= simple_form_for(@entry, html: { class: 'form-horizontal' }) do |f| %>
     <%= f.error_notification %>
 
-      <%= f.association :user, label_method: :full_name, collection: Customer.all, prompt: 'Choose a Customer' %>
+      <%= f.association :user, label_method: :full_name_with_id, collection: Customer.all, prompt: 'Choose a Customer' %>
       <%= f.association :product, prompt: 'Choose a product' %>
       <%= f.input :rate %>
       <%= f.input :no_of_jars %>
-      <%= f.input :amount %>
+      <%= f.input :empty %>
+      <%= f.input :filled %>
+      <%= f.input :amount_paid %>
+      <%= f.input :collected_by, label_method: :full_name, collection: Employee.all, prompt: 'Choose an employee' %>
+      <%= f.input :driver1, label_method: :full_name, collection: Employee.all, prompt: 'Choose an Driver1' %>
+      <%= f.input :driver2, label_method: :full_name, collection: Employee.all, prompt: 'Choose an Driver2' %>
+      <%= f.input :total_amount %>
+      <%= f.input :remark %>
       <%= f.button :submit_cancel, 'Save', cancel: entries_path %>
   <% end %>
 </div>

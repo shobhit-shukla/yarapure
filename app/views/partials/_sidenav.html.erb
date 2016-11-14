@@ -64,6 +64,13 @@
             <li><a><i class="fa fa-book"></i>Entries <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu" style="display: none">
                 <li><%= link_to 'Entries', entries_path %></li>
+                <li><%= link_to 'New Entry', new_entry_path %></li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-money"></i>Payment <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><%= link_to 'Payments', payments_path %></li>
+                <li><%= link_to 'New Payment', new_payment_path %></li>
               </ul>
             </li>
           </ul>

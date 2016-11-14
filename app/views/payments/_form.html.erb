@@ -1,0 +1,16 @@
+<%= simple_form_for(@payment, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="col-md-6">
+    <%= f.input :payment_mode , collection: Payment.payment_modes.keys, prompt: 'Select mode of payment' %>
+    <%= f.input :customer_id, label_method: :full_name_with_id, collection: Customer.all, prompt: 'Choose a customer' %>
+    <%= f.input :employee_id, label_method: :full_name_with_id, collection: Employee.all, prompt: 'Choose a employee' %>
+    <%= f.input :bank %>
+    <%= f.input :cheque_date, as: :string, input_html: { class: "datetimepicker" } %>
+    <%= f.input :total_dues %>
+    <%= f.input :remark %>
+    <%= f.input :cheque_no %>
+    <%= f.input :amount %>
+    <%= f.button :submit_cancel, 'Save', cancel: payments_path %>
+  </div>
+<% end %>

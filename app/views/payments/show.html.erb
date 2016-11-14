@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Payment mode:</strong>
+  <%= @payment.payment_mode %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @payment.customer_id %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @payment.employee_id %>
+</p>
+
+<p>
+  <strong>Bank:</strong>
+  <%= @payment.bank %>
+</p>
+
+<p>
+  <strong>Cheque date:</strong>
+  <%= @payment.cheque_date %>
+</p>
+
+<p>
+  <strong>Total dues:</strong>
+  <%= @payment.total_dues %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @payment.remark %>
+</p>
+
+<p>
+  <strong>Cheque no:</strong>
+  <%= @payment.cheque_no %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

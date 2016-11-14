@@ -25,7 +25,6 @@ class EntriesController < AdminController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
-
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
@@ -69,6 +68,6 @@ class EntriesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:user_id, :product_id, :rate, :no_of_jars, :amount)
+      params.require(:entry).permit(:user_id, :product_id, :rate, :no_of_jars, :empty, :filled, :amount_paid, :collected_by, :driver1, :driver2, :total_amount, :remark)
     end
 end

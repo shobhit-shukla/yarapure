@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105121645) do
+ActiveRecord::Schema.define(version: 20161114035535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,8 +110,30 @@ ActiveRecord::Schema.define(version: 20161105121645) do
     t.float    "rate"
     t.integer  "no_of_jars"
     t.float    "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "empty"
+    t.string   "filled"
+    t.float    "amount_paid"
+    t.integer  "driver1"
+    t.integer  "driver2"
+    t.string   "total_amount"
+    t.text     "remark"
+    t.integer  "collected_by"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "payment_mode"
+    t.integer  "customer_id"
+    t.integer  "employee_id"
+    t.string   "bank"
+    t.datetime "cheque_date"
+    t.float    "total_dues"
+    t.text     "remark"
+    t.string   "cheque_no"
+    t.float    "amount"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "plans", force: :cascade do |t|

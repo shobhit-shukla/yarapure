@@ -24,6 +24,7 @@
 #  phone                  :string
 #  avatar                 :string
 #  parent_id              :integer
+#  uid                    :string
 #
 
 class Employee < User

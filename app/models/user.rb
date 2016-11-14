@@ -24,6 +24,7 @@
 #  phone                  :string
 #  avatar                 :string
 #  parent_id              :integer
+#  uid                    :string
 #
 
 class User < ActiveRecord::Base
@@ -45,6 +46,10 @@ class User < ActiveRecord::Base
 
   def full_name
     first_name.to_s + ' ' + last_name.to_s
+  end
+
+  def full_name_with_id
+    first_name.to_s + ' ' + last_name.to_s + ' #' + uid.to_s
   end
 
   def customer?
