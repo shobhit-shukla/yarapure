@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trips</h1>
+
+<%= link_to 'New Trip', new_trip_path, class: 'btn btn-success' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Vehicle</th>
+      <th>Driver1</th>
+      <th>Driver2</th>
+      <th>Product</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.vehicle_id %></td>
+        <td><%= trip.driver1_id %></td>
+        <td><%= trip.driver2_id %></td>
+        <td><%= trip.product_id %></td>
+        <td><%= trip.aasm_state %></td>
+        <td><%= link_to 'Show', trip %></td>
+        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

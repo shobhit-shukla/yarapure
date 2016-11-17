@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114035535) do
+ActiveRecord::Schema.define(version: 20161116173532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,18 @@ ActiveRecord::Schema.define(version: 20161114035535) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "trips", force: :cascade do |t|
+    t.integer  "vehicle_id"
+    t.integer  "driver1_id"
+    t.integer  "driver2_id"
+    t.integer  "product_id"
+    t.string   "aasm_state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "empty"
+    t.integer  "filled"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "middle_name"
@@ -193,5 +205,14 @@ ActiveRecord::Schema.define(version: 20161114035535) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["phone"], name: "index_users_on_phone", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "registration_no"
+    t.string   "year"
+    t.string   "make"
+    t.string   "model"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end

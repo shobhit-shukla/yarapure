@@ -1,0 +1,9 @@
+<%= simple_form_for(@vehicle, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :registration_no %>
+  <%= f.input :year %>
+  <%= f.input :make %>
+  <%= f.input :model %>
+  <%= f.button :submit_cancel, 'Save', cancel: vehicles_path %>
+<% end %>

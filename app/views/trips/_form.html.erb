@@ -1,0 +1,10 @@
+<%= simple_form_for(@trip, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.input :vehicle_id, collection: Vehicle.all, prompt: 'Select a Vehicle', label_method: :vehicle_with_number %>
+  <%= f.input :driver1_id, label_method: :full_name, collection: Employee.all, prompt: 'Choose an Driver1' %>
+  <%= f.input :driver2_id, label_method: :full_name, collection: Employee.all, prompt: 'Choose an Driver2' %>
+  <%= f.input :product_id, collection: Product.all, prompt: 'Select a product' %>
+  <%= f.input :empty %>
+  <%= f.input :filled %>
+  <%= f.input :aasm_state %>
+  <%= f.button :submit_cancel, 'Save', cancel: trips_path %>
+<% end %>

@@ -22,6 +22,8 @@ gem 'rails_12factor'
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'cloudinary'
 gem 'protokoll'
+gem 'aasm'
+
 
 group :development, :test do
   gem 'byebug'

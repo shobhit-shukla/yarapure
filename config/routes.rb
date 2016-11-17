@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :customer_types
     resources :orders
     resources :payments
+    resources :trips
+    resources :vehicles
   end
 
   devise_for :users, controllers: {
