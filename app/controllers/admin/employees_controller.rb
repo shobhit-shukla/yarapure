@@ -4,7 +4,7 @@ class Admin::EmployeesController < AdminController
   # GET /admin/employees
   # GET /admin/employees.json
   def index
-    @employees = Employee.all
+    @employees = Employee.where(parent_id: current_user.id)
   end
 
   # GET /admin/employees/1

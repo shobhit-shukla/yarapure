@@ -1,0 +1,26 @@
+<div class="x_title">Admins</div>
+<div class="x_content">
+  <%= link_to 'New Admin', new_superadmin_path , class: 'btn btn-success'%>
+  <table class="table table-striped projects">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>--</th>
+    </thead>
+    <tbody>
+      <% @admin.each do |admin| %>
+        <tr>
+          <td><%= admin.uid %></td>
+          <td><%= admin.full_name %></td>
+          <td><%= admin.email %></td>
+          <td><%= admin.phone %></td>
+          <td><%= link_to 'Edit', edit_superadmin_path(admin), class: 'btn btn-warning btn-xs' %></td>
+          <td><%= link_to 'Delete', admin, method: :delete, class: 'btn btn-danger btn-xs', data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Login as', become_path(admin), class: 'btn btn-success btn-xs' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

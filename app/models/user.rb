@@ -63,4 +63,12 @@ class User < ActiveRecord::Base
   def employee?
     type == 'Employee'
   end
+
+  def admin?
+    type == 'Admin'
+  end
+
+  def superadmin?
+    type == 'Superadmin'
+  end
 end

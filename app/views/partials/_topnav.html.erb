@@ -7,6 +7,10 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
+        <% if session[:was_admin] %>
+          <li><%= link_to 'Switch to Admin', back_as_admin_path %></li>
+        <% end %>
+
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <%= image_tag "user.png" %><%= current_user.full_name %>

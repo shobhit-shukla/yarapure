@@ -31,4 +31,5 @@ class Customer < User
 	has_one :customer_detail
 
 	accepts_nested_attributes_for :customer_detail
+
 end

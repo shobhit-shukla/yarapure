@@ -4,7 +4,7 @@ class Admin::CustomersController < AdminController
   # GET /users
   # GET /users.json
   def index
-    @customers = Customer.all
+    @customers = Customer.where(parent_id: current_user.id)
   end
 
   # GET /users/1

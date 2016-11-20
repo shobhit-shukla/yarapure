@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   match :admin, to: 'admin/dashboard#index', via: [:get]
+  match :back_as_admin, to: 'admin#back_as_admin', via: :get
+  get 'superadmins/:id/become', to: 'superadmins#become',  as: 'become'
 
   namespace :admin do
     resources :addresses
-    resources :users
+    #resources :users
     resources :dispatchers
     resources :employees
     resources :customers
@@ -23,6 +25,10 @@ Rails.application.routes.draw do
     resources :trips
     resources :vehicles
   end
+
+  resources :superadmins
+
+  put "admin/:id", to: "admin#update", as: :admin_update
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
