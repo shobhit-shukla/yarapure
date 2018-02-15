@@ -34,5 +34,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root 'plainpage#index'
+  root 'home#index'
 end
