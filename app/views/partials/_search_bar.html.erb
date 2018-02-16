@@ -1,0 +1,10 @@
+  <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
+     <div class="row">
+        <%= form_for products_path do |f|%>
+          <input class="flipkart-navbar-input col-xs-10" type="" placeholder="Search for Products, Brands and more" name="pro">
+          <button type="submit" class="flipkart-navbar-button col-xs-1">
+            <%= fa_icon "search" %>
+          </button>
+        <% end %>
+     </div>
+  </div>
