@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   match :admin, to: 'admin/dashboard#index', via: [:get]
   match :back_as_admin, to: 'admin#back_as_admin', via: :get
   get 'superadmins/:id/become', to: 'superadmins#become',  as: 'become'
+  get 'profile', to: 'users#edit'
 
   namespace :admin do
     resources :addresses

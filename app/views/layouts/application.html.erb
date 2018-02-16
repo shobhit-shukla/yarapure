@@ -12,15 +12,17 @@
 </head>
 
 <body>
-<div class="container body">
-  <% flash.each do |key, value| %>
+  <%= render "partials/topnav" %>
+
+  <div class="body">
+    <% flash.each do |key, value| %>
       <div align="center" id="flash" class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
+    <% end %>
 
-  <%= yield %>
+    <%= yield %>
 
-  <%#= render "partials/footer" %>
-  <%= javascript_include_tag 'footermanifest'%>
-
+    <%#= render "partials/footer" %>
+    <%= javascript_include_tag 'footermanifest'%>
+  </div>
 </body>
 </html>

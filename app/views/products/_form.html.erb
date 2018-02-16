@@ -6,6 +6,7 @@
     <%= f.input :featured, :input_html => { class: 'bootstrap-switch' }  %>
     <%= f.input :active, :input_html => { class: 'bootstrap-switch' }  %>
     <%= f.input :brand_id, collection: Brand.all, prompt: 'Select a Brand' %>
+    <%= f.file_field :images, multiple: true %>
     <%= f.button :submit_cancel, 'Save', cancel: products_path %>
   <% end %>
 </div>

@@ -1,44 +1,20 @@
 <div class="search-result container">
-  <div class="row">
-    <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
-       <div class="row">
-          <%= form_tag products_path do %>
-            <input class="flipkart-navbar-input col-xs-10" type="" placeholder="Search for Products, Brands and more" name="pro">
-            <%= submit_tag(nil, class: "flipkart-navbar-button col-xs-1") do %>
-               <svg width="15px" height="15px">
-                   <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-               </svg>
-           <%end%>
-        <% end %>
-       </div>
-    </div>
-  </div>
-
-  <div class="container">
-
-      <hgroup class="mb20">
-  		<h1>Search Results</h1>
-  		<h2 class="lead"><strong class="text-danger">3</strong> results were found for the search for <strong class="text-danger">Lorem</strong></h2>
-  	</hgroup>
+  <hgroup class="mb20">
+		<h1>All Products</h1>
+	</hgroup>
 
       <section class="col-xs-12 col-sm-6 col-md-12">
-        <% for i in 0..3 %>
-        <article class="search-result row">
-  			<div class="col-xs-12 col-sm-12 col-md-3">
-  				<a href="#" title="Lorem ipsum" class="thumbnail"><img src="https://www.gstatic.com/webp/gallery/<%= i+1 %>.png" alt="Lorem ipsum" /></a>
-  			</div>
-  			<div class="col-xs-12 col-sm-12 col-md-2">
-  				<ul class="meta-search">
-  					<li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
-  					<li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
-  					<li><i class="glyphicon glyphicon-tags"></i> <span>People</span></li>
-  				</ul>
-  			</div>
-  			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-  				<h3><a href="#" title="">Tile</a></h3>
-  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Commodo nulla facilisi nullam vehicula. Semper quis lectus nulla at volutpat diam ut venenatis. Ante metus dictum at tempor commodo. Pharetra convallis posuere morbi leo. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Massa id neque aliquam vestibulum morbi. Massa massa ultricies mi quis hendrerit dolor. Interdum consectetur libero id faucibus nisl tincidunt eget nullam. Turpis egestas maecenas pharetra convallis posuere morbi leo. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Morbi tincidunt augue interdum velit euismod. Facilisis magna etiam tempor orci eu lobortis. Donec massa sapien faucibus et molestie ac feugiat sed. Amet cursus sit amet dictum sit amet justo. Rhoncus mattis rhoncus urna neque viverra.</p>
-                  <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
-  			</div>
+        <% @products.each do |product| %>
+          <article class="search-result row">
+    			<div class="col-xs-12 col-sm-12 col-md-3">
+    				<a href="#" title="Lorem ipsum" class="thumbnail"><img src="https://www.gstatic.com/webp/gallery/<%= 1 %>.png" alt="Lorem ipsum" /><%= product.images %></a>
+    			</div>
+
+    			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+    				<h3><a href="#" title=""><%= product.name %></a></h3>
+            <h5><a href="#" brand=""><%= product.brand.name %></a></h5>
+    				<p><%= product.description %></p>
+    			</div>
   			<span class="clearfix borda"></span>
   		</article>
         <% end %>
